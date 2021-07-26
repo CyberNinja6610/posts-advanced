@@ -1,10 +1,8 @@
 package ru.netology.service
 
 import org.junit.Assert.*
-import ru.netology.entity.Comments
-import ru.netology.entity.Likes
-import ru.netology.entity.Post
-import ru.netology.entity.Reposts
+import ru.netology.entity.*
+import ru.netology.entity.attachment.*
 
 class WallServiceTest {
 
@@ -35,6 +33,11 @@ class WallServiceTest {
         val replyOwnerId = 0L
         val replyPostId = 0L
 
+        val attachments = emptyArray<Attachment>();
+        val page = Page(id = 0, groupId = 0, "Страничка");
+        val attachment: Attachment = PageAttachment(page)
+        attachments.plus(attachment)
+
         var post = Post(
             id = id,
             ownerId = ownerId,
@@ -55,7 +58,12 @@ class WallServiceTest {
             friendsOnly = friendsOnly,
             postponedId = postponedId,
             replyOwnerId = replyOwnerId,
-            replyPostId = replyPostId
+            replyPostId = replyPostId,
+            copyright = null,
+            geo = null,
+            postSource = null,
+            views = null,
+            attachments = attachments
         )
 
         post = WallService.post(post)
@@ -89,6 +97,11 @@ class WallServiceTest {
         val replyOwnerId = 0L
         val replyPostId = 0L
 
+        val attachments = emptyArray<Attachment>();
+        val page = Page(id = 0, groupId = 0, "Страничка");
+        val attachment: Attachment = PageAttachment(page)
+        attachments.plus(attachment)
+
         var post = Post(
             id = id,
             ownerId = ownerId,
@@ -109,7 +122,12 @@ class WallServiceTest {
             friendsOnly = friendsOnly,
             postponedId = postponedId,
             replyOwnerId = replyOwnerId,
-            replyPostId = replyPostId
+            replyPostId = replyPostId,
+            copyright = null,
+            geo = null,
+            postSource = null,
+            views = null,
+            attachments = attachments
         )
 
         post = WallService.post(post)
@@ -148,6 +166,11 @@ class WallServiceTest {
         val replyOwnerId = 0L
         val replyPostId = 0L
 
+        val attachments = emptyArray<Attachment>();
+        val page = Page(id = 0, groupId = 0, "Страничка");
+        val attachment: Attachment = PageAttachment(page)
+        attachments.plus(attachment)
+
         var post = Post(
             id = id,
             ownerId = ownerId,
@@ -168,7 +191,12 @@ class WallServiceTest {
             friendsOnly = friendsOnly,
             postponedId = postponedId,
             replyOwnerId = replyOwnerId,
-            replyPostId = replyPostId
+            replyPostId = replyPostId,
+            copyright = null,
+            geo = null,
+            postSource = null,
+            views = null,
+            attachments = attachments
         )
 
         post = WallService.post(post)
