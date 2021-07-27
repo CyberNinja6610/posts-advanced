@@ -422,6 +422,7 @@ class WallServiceTest {
 
     }
 
+    @org.junit.Test
     fun createReportComment_reasonNotFound() {
         assertThrows(ReasonNotFoundException::class.java) {
             WallService.reset()
