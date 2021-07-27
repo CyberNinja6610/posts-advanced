@@ -18,6 +18,8 @@ object WallService {
 
     fun reset() {
         posts = emptyArray()
+        comments = emptyArray()
+        reportComments = emptyArray()
     }
 
     fun post(post: Post): Post {

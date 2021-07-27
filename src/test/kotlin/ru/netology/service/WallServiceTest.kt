@@ -454,7 +454,7 @@ class WallServiceTest {
             val attachment: Attachment = PageAttachment(page)
             attachments.plus(attachment)
 
-            val post = Post(
+            var post = Post(
                 id = id,
                 ownerId = ownerId,
                 comments = comments,
@@ -482,7 +482,7 @@ class WallServiceTest {
                 attachments = attachments
             )
 
-            WallService.post(post)
+            post = WallService.post(post)
 
             val message = "Сообщение"
             var comment = Comment(postId = post.id, attachments = null, guid = "", message = message)
@@ -559,7 +559,6 @@ class WallServiceTest {
 
             val message = "Сообщение"
             var comment = Comment(postId = post.id, attachments = null, guid = "", message = message)
-            comment = WallService.createComment(comment)
 
             val fakeGuid = "123123123123"
             var reportComment = ReportComment(commentId = fakeGuid, reason = Reason.ABUSE.type)
